@@ -110,11 +110,11 @@ class PolybiusSquare(object):
             self.alphabet = string.ascii_lowercase
             self.tableau_alphabet = ''.join(sorted(list(set(self.alphabet) - set(char_map[0]))))
         else:
-            self.alphabet = sorted(alphabet + char_map[0])
-            self.tableau_alphabet = alphabet
+            self.alphabet = sorted(alphabet.lower() + char_map[0].lower())
+            self.tableau_alphabet = alphabet.lower()
 
         self.height = self.width = 5
-        self.char_map = char_map
+        self.char_map = (char_map[0].lower(), char_map[1].lower())
 
     def get_coordinates(self, c):
         """
